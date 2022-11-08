@@ -14,19 +14,19 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("w"))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             transform.localPosition += Vector3.forward;
         }
-        if (Input.GetButton("s"))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             transform.localPosition += Vector3.back;
         }
-        if (Input.GetButton("a"))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             transform.localPosition += Vector3.right;
         }
-        if (Input.GetButton("d"))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             transform.localPosition += Vector3.left;
         }
