@@ -10,7 +10,8 @@ public class Movement : MonoBehaviour
     private const int speedForward = 5;
     private const int speedBackward = 3;
     private int turnSpeed = 60;
-    private Vector3 initialPos = new Vector3(8,0,-14);
+    private Vector3 initialPos = new Vector3(0,0,0);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,6 @@ public class Movement : MonoBehaviour
             currentSpeed = speedForward; //gt forward speed
         }
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime * verticalInput);
-        
         
         //Lateral movement
         if (Input.GetKey(KeyCode.D)||(Input.GetKey(KeyCode.A)))
