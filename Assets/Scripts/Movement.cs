@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
     //Initiate character
     private void initiateChar()
     {
-        transform.SetPositionAndRotation(initialPos, Quaternion.Euler(0, -90, 0));
+        transform.SetPositionAndRotation(initialPos, Quaternion.Euler(0, 180, 0));
     }
 
 
