@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private float verticalInput;
+    //VARIABLES
+    private float verticalInput; 
     private float horizontalInput;
-    private int currentSpeed;
-    private const int speedForward = 5;
-    private const int speedBackward = 3;
-    private int turnSpeed = 60;
-    private Vector3 initialPos = new Vector3(0,0,0);
+    private int currentSpeed; //Player current speed
+    private const int speedForward = 5; //Forward speed
+    private const int speedBackward = 3; //Backward speed
+    private int turnSpeed = 100; //Turnspeed
+    private Vector3 initialPos = new Vector3(0,0,0); //Initial position
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical"); //Read vertical input
+        horizontalInput = Input.GetAxis("Horizontal");//Read horizontal input
 
         //Forward o backward movement
         if (verticalInput < 0)
@@ -30,7 +31,7 @@ public class Movement : MonoBehaviour
             currentSpeed = speedBackward; //get backward speed
         }
         else {
-            currentSpeed = speedForward; //gt forward speed
+            currentSpeed = speedForward; //get forward speed
         }
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime * verticalInput);
         
@@ -39,7 +40,7 @@ public class Movement : MonoBehaviour
         {
              transform.Translate(Vector3.right * currentSpeed * Time.deltaTime * horizontalInput);
         }
-        //Rotattion movement
+        //Rotation movement
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
            transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
