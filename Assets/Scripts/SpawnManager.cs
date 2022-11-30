@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private bool isRock = false;
-    [SerializeField] private bool isTrap = false;
-    [SerializeField] private GameObject[] prefabs;
+    [SerializeField] private GameObject prefabs;
     // Start is called before the first frame update
     void Start()
     {
-        if (isRock) {
-            InvokeRepeating("InitiateRock", 10f, 2f);
-        }
-
-        if (isTrap) {
-            InvokeRepeating("InitiateTrap", 10f, 2f);
-        }
+        InvokeRepeating("InitiateObject", 2f, 2f);
     }
 
     // Update is called once per frame
@@ -25,11 +17,7 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    private void InitiateRock() {
-    
-    }
-
-    private void InitiateTrap() {
-    
+    private void InitiateObject() {
+        Instantiate(prefabs,transform.position,Quaternion.identity);
     }
 }
