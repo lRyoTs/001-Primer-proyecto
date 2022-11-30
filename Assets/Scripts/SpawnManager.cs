@@ -18,6 +18,6 @@ public class SpawnManager : MonoBehaviour
     }
 
     private void InitiateObject() {
-        Instantiate(prefabs,transform.position,Quaternion.identity);
+        Instantiate(prefabs,transform.position,transform.rotation);
     }
 }

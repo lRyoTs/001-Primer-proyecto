@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.3778517, z: 1.2739813}
+  m_Center: {x: -3.1179223e-17, y: -0.0731115, z: -0.01317726}
 --- !u!1 &3110561720248526663
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +192,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1671159, y: 1, z: 1.3034925}
+  m_Center: {x: 0.0080203125, y: 1.2495738e-18, z: -0.06568866}
 --- !u!1 &6930026614441437469
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +289,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1440328, y: 1, z: 1.1737286}
+  m_Center: {x: -0.01267963, y: 1.2413585e-18, z: 0.042303853}
 --- !u!1 &8807050097660973181
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 1378513517594047252}
   m_Layer: 0
   m_Name: Crates
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
