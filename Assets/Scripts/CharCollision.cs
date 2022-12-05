@@ -17,7 +17,7 @@ public class CharCollision : MonoBehaviour
         {
             Debug.Log($"You have collided with {other.gameObject.name}");
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Debug.Log($"GAME OVER");
             Time.timeScale = 0;
         }

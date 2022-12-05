@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("InitiateObject", 2f, 2f);
+        InvokeRepeating("InitiateObject", 2f, 5f);
     }
 
     // Update is called once per frame
