@@ -12,5 +12,14 @@ public class CharCollision : MonoBehaviour
             Debug.Log($"You have collided with {other.gameObject.name}");
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag == "Traps")
+        {
+            Debug.Log($"You have collided with {other.gameObject.name}");
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+            Debug.Log($"GAME OVER");
+            Time.timeScale = 0;
+        }
     }
 }

@@ -15,6 +15,6 @@ public class MoveForward : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-       // transform.RotateAround(transform.position, Vector3.left, 10f);
+        transform.Rotate(Vector3.forward, 10f);
     }
 }

@@ -21,6 +21,13 @@ public class CoinMov : MonoBehaviour
     }
 
     private void coinMovement() {
-        transform.Rotate(Vector3.up * speedRot * Time.deltaTime);
+        transform.RotateAround(transform.position, Vector3.up, speedRot * Time.deltaTime);
+        if (hasHorizontal) {
+            transform.Translate(Vector3.forward * 10f * Time.deltaTime);
+        }
+
+        if (hasVertical) {
+        
+        }
     }
 }
