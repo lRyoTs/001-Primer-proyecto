@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         //Reset position
         if (Input.GetKeyDown(KeyCode.R))
         {
-            initiateChar();
+            findClosestCoin();
         }
 
     }
@@ -53,8 +53,28 @@ public class PlayerController : MonoBehaviour
     }
 
     //FUnction that finds the closes collectable
-    private void findClosestCoin() {
+    private GameObject findClosestCoin() {
         
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Collectables"); //get all object with tag "Collectables" in scene
+
+        GameObject closest = null; //Initiate variable gameObject
+        float distance = Mathf.Infinity; //Store the highest posible value first
+        
+        Vector3 position = transform.position;
+        //Check for every gameobject in 
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            //Check if the new gameObject distance is lower of the current one stored
+            if (curDistance < distance)
+            {
+                closest = go; //Asign the closest gameObject
+                distance = curDistance; //get the new closest distance
+            }
+        }
+        return closest; //return the closest gameObject found
     }
 
 
