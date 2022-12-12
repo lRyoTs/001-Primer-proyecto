@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     //VARIABLES
     private float verticalInput; 
@@ -50,6 +50,11 @@ public class Movement : MonoBehaviour
     private void initiateChar()
     {
         transform.SetPositionAndRotation(initialPos, Quaternion.Euler(0, 180, 0));
+    }
+
+    //FUnction that finds the closes collectable
+    private void findClosestCoin() {
+        
     }
 
 
