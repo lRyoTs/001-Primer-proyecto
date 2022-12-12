@@ -4,22 +4,57 @@ using UnityEngine;
 
 public class CharCollision : MonoBehaviour
 {
+    //VARIABLES
+    private Vector3 respawnPos;
+    private int playerLife = 10;
+    private int collectCounter = 0; //counts the collectables collected
+    
     //Function that check player collisions
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log($"You have collided with {other.collider.name}");
+       
         if (other.gameObject.tag == "Collectables") {
-            Debug.Log($"You have collided with {other.gameObject.name}");
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); //Destroy collectable
+            collectCounter++; //Increase by 1 counter
+            Debug.Log($"You have {collectCounter}/30 coins");
         }
-
+        
+        //Check colision with Traps
         if (other.gameObject.tag == "Traps")
         {
-            Debug.Log($"You have collided with {other.gameObject.name}");
-            Destroy(other.gameObject);
             gameObject.SetActive(false);
-            Debug.Log($"GAME OVER");
-            Time.timeScale = 0;
+            playerLife--; //Reduce player life by 1
+            Destroy(other.gameObject); //Destroy trap
+            
+            if (playerLife < 1)
+            {
+                //gameObject.SetActive(false); //Desactivate player
+                Debug.Log($"GAME OVER"); //Display Game Over
+                Time.timeScale = 0; //Freeaze Game
+            }
+            else {
+                transform.position = respawnPos; //Move gameObject to latest checkpoint
+                gameObject.SetActive(true);
+                Debug.Log($"You have {playerLife} lives left");
+            }
+        }
+
+        //Check colision with Checkpoint
+        if (other.gameObject.tag == "Checkpoint")
+        {
+            Debug.Log($"You have collided with {other.gameObject.name}");
+            respawnPos = transform.position; //Update respawn to latest checkpoint
+        }
+
+        if (other.gameObject.tag == "Finish") {
+            if (collectCounter < 30)
+            {
+                Debug.Log($"You do NOT have all the COINS {collectCounter}/30");
+            }
+            else {
+                Debug.Log($"Congratulations, YOU WON");
+                Time.timeScale = 0; //freeze game
+            }
         }
     }
 }

@@ -35,16 +35,8 @@ public class Movement : MonoBehaviour
         }
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime * verticalInput);
         
-        //Lateral movement
-        if (Input.GetKey(KeyCode.D)||(Input.GetKey(KeyCode.A)))
-        {
-             transform.Translate(Vector3.right * currentSpeed * Time.deltaTime * horizontalInput);
-        }
         //Rotation movement
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-           transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
-        }
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
         //Reset position
         if (Input.GetKeyDown(KeyCode.R))

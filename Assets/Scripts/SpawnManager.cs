@@ -5,18 +5,15 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject prefabs;
+    [SerializeField] private float timer = 2f;
+    [SerializeField] private float spawnRate = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("InitiateObject", 2f, 5f);
+        InvokeRepeating("InitiateObject",timer, spawnRate);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void InitiateObject() {
         Instantiate(prefabs,transform.position,transform.rotation);
     }

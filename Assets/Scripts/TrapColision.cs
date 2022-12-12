@@ -8,7 +8,7 @@ public class TrapColision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            Debug.Log($"You have collided with {other.gameObject.name}");
+            //Debug.Log($"You have collided with {other.gameObject.name}");
             Destroy(gameObject);
         }
     }
