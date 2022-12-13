@@ -6,19 +6,13 @@ public class CoinMov : MonoBehaviour
 {
     private float speedRot = 100f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        coinMovement();
+        CoinMovement();
     }
 
-    private void coinMovement() {
+    private void CoinMovement() {
         transform.RotateAround(transform.position, Vector3.up, speedRot * Time.deltaTime);
     }
 }
