@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabs;
+    [SerializeField] private GameObject prefabs; //stores the gameObject to Instatiate
     [SerializeField] private float timer = 2f;
     [SerializeField] private float spawnRate = 5f;
     // Start is called before the first frame update

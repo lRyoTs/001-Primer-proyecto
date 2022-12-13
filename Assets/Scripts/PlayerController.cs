@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
     private const int speedBackward = 3; //Backward speed
     private int turnSpeed = 100; //Turnspeed
     private Vector3 initialPos = new Vector3(0,0,0); //Initial position
+    private bool activatePointer = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        initiateChar();
+        InitiateChar();
     }
 
     // Update is called once per frame
@@ -34,48 +35,20 @@ public class PlayerController : MonoBehaviour
             currentSpeed = speedForward; //get forward speed
         }
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime * verticalInput);
-        
+
         //Rotation movement
         transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
-        //Reset position
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            findClosestCoin();
-        }
-
+       if (Input.GetKeyDown(KeyCode.R))
+       {
+            activatePointer = !activatePointer;
+            transform.GetChild(4).gameObject.SetActive(activatePointer);    
+       }
     }
 
     //Initiate character
-    private void initiateChar()
+    private void InitiateChar()
     {
         transform.SetPositionAndRotation(initialPos, Quaternion.Euler(0, 180, 0));
     }
-
-    //FUnction that finds the closes collectable
-    private GameObject findClosestCoin() {
-        
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Collectables"); //get all object with tag "Collectables" in scene
-
-        GameObject closest = null; //Initiate variable gameObject
-        float distance = Mathf.Infinity; //Store the highest posible value first
-        
-        Vector3 position = transform.position;
-        //Check for every gameobject in 
-        foreach (GameObject go in gos)
-        {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            //Check if the new gameObject distance is lower of the current one stored
-            if (curDistance < distance)
-            {
-                closest = go; //Asign the closest gameObject
-                distance = curDistance; //get the new closest distance
-            }
-        }
-        return closest; //return the closest gameObject found
-    }
-
-
 }

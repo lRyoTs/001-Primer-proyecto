@@ -6,9 +6,8 @@ public class TrapColision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Obstacle") //CHeck if the trap collided with Obstacle
         {
-            //Debug.Log($"You have collided with {other.gameObject.name}");
             Destroy(gameObject);
         }
     }

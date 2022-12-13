@@ -5,9 +5,10 @@ using UnityEngine;
 public class CharCollision : MonoBehaviour
 {
     //VARIABLES
-    private Vector3 respawnPos;
+    private Vector3 respawnPos; //Store the position to spawn if killed
     private int playerLife = 10;
     private int collectCounter = 0; //counts the collectables collected
+
     
     //Function that check player collisions
     private void OnTriggerEnter(Collider other)
@@ -47,7 +48,7 @@ public class CharCollision : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Finish") {
-            if (collectCounter < 30)
+            if (collectCounter < 30) //Check if the player collected all coins
             {
                 Debug.Log($"You do NOT have all the COINS {collectCounter}/30");
             }
