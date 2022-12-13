@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         InitiateChar();
+        Debug.Log($"Player Controls:\nMovement: WASD or ArrowKeys\nActivate search coin function: R"); //Display player controls
     }
 
     // Update is called once per frame

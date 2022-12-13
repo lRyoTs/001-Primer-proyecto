@@ -6,6 +6,7 @@ public class CharCollision : MonoBehaviour
 {
     //VARIABLES
     private Vector3 respawnPos; //Store the position to spawn if killed
+    private Quaternion respawnRot; //Store the rotation to spawn if killed
     private int playerLife = 10;
     private int collectCounter = 0; //counts the collectables collected
 
@@ -35,6 +36,7 @@ public class CharCollision : MonoBehaviour
             }
             else {
                 transform.position = respawnPos; //Move gameObject to latest checkpoint
+                transform.rotation = respawnRot;
                 gameObject.SetActive(true);
                 Debug.Log($"You have {playerLife} lives left");
             }
@@ -45,6 +47,7 @@ public class CharCollision : MonoBehaviour
         {
             Debug.Log($"You have collided with {other.gameObject.name}");
             respawnPos = transform.position; //Update respawn to latest checkpoint
+            respawnRot = transform.rotation; 
         }
 
         if (other.gameObject.tag == "Finish") {
