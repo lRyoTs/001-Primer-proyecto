@@ -9,7 +9,6 @@ public class Pointer : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-       
     }
 
     private void Update()
@@ -27,9 +26,9 @@ public class Pointer : MonoBehaviour
 
         GameObject closest = null; //Initiate variable gameObject
         float distance = Mathf.Infinity; //Store the highest posible value first
+        Vector3 position = transform.position; //Get player position
 
-        Vector3 position = transform.position;
-        //Check for every gameobject in 
+        //Check for every gameobject with tag "Collectables" 
         foreach (GameObject go in gos)
         {
             Vector3 diff = go.transform.position - position;

@@ -186,6 +186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9178623744701185865}
     m_Modifications:
+    - target: {fileID: 6532085806653870941, guid: 3dc731bfe8b797f4ba0886bb217f192d, type: 3}
+      propertyPath: spawnRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6572733605881750561, guid: 3dc731bfe8b797f4ba0886bb217f192d, type: 3}
       propertyPath: m_Name
       value: cannon (12)
@@ -373,6 +377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9178623744701185865}
     m_Modifications:
+    - target: {fileID: 6532085806653870941, guid: 3dc731bfe8b797f4ba0886bb217f192d, type: 3}
+      propertyPath: spawnRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6572733605881750561, guid: 3dc731bfe8b797f4ba0886bb217f192d, type: 3}
       propertyPath: m_Name
       value: cannon (13)

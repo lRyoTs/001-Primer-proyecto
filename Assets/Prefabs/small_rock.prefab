@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7439834778801378616, guid: 9ba9208b1223b62479ad79bc2ad7178d, type: 3}
       propertyPath: speed
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7439834778801378618, guid: 9ba9208b1223b62479ad79bc2ad7178d, type: 3}
       propertyPath: m_RootOrder
@@ -78,6 +78,10 @@ PrefabInstance:
     - target: {fileID: 7439834778801378622, guid: 9ba9208b1223b62479ad79bc2ad7178d, type: 3}
       propertyPath: m_Name
       value: small_rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439834778801378623, guid: 9ba9208b1223b62479ad79bc2ad7178d, type: 3}
+      propertyPath: m_Radius
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba9208b1223b62479ad79bc2ad7178d, type: 3}
